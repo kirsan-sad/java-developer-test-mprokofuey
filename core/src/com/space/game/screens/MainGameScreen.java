@@ -73,13 +73,13 @@ public class MainGameScreen implements Screen {
             return;
         }
 
-        playerShip.moveTo(keyboardAdapter.getDirection(playerShip.getPosition()));
+        playerShip.moveTo(keyboardAdapter.getDirection(playerShip.getPosition()), delta);
         playerShip.rotateTo(keyboardAdapter.getMousePos());
 
         ScreenUtils.clear(1, 1, 1, 1);
         batch.begin();
         background.render(batch);
-        playerShip.render(batch, delta);
+        playerShip.render(batch);
 
         for (int i = 0; i < asteroids.size(); i++) {
             Asteroid asteroid = asteroids.get(i);

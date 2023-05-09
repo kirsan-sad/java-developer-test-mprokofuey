@@ -38,12 +38,12 @@ public class PlayerShip implements ICollidable {
         bullets = new ArrayList<>();
     }
 
-    public void render(Batch batch, float delta) {
+    public void render(Batch batch) {
         batch.draw(textureRegion, position.x, position.y, halfSize, halfSize, size, size, 1, 1, angle.angleDeg() - 90);
     }
 
-    public void moveTo(Vector2 direction) {
-        position.add(direction);
+    public void moveTo(Vector2 direction, float delta) {
+        position.add(direction.x * delta * GameConfig.PLAYER_SPEED, direction.y * delta * GameConfig.PLAYER_SPEED);
         if (position.x < 0) {
             position.x = Gdx.graphics.getWidth() - size;
         }
