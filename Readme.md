@@ -7,3 +7,6 @@ To build a game, enter the command
 ./gradlew desktop:dist
 ```
 To open the project, run the "build.gradle" or open the project in the IDE
+
+### Preview
+![Preview](https://github.com/kirsan-sad/java-developer-test-mprokofuey/blob/master/PlayScreen.gif?raw=true)
